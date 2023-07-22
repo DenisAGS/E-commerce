@@ -1,0 +1,143 @@
+.header-container {
+  margin: 0;
+  padding: 0;
+}
+
+.App-header {
+  background-color: #1f5e12;
+  min-height: 12vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Alinea los elementos a los extremos del contenedor */
+  font-size: calc(10px + 2vmin);
+  color: white;
+  width: 100%;
+  flex-direction: row;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+nav li {
+  margin-right: 20px;
+}
+
+nav li:last-child {
+  margin-right: 20px;
+}
+
+nav a {
+  text-decoration: none;
+  color: white;
+}
+
+/* Icono */
+.icon-container {
+  display: flex;
+  align-items: center;
+  margin-left: 2em;
+}
+
+.icon-text {
+  margin-left: 8px;
+  font-size: xx-large;
+  font-style:italic;
+  cursor: pointer;
+  text-decoration: none;
+  color: #FFF;
+  font-weight: 600;
+}
+
+.icon {
+  height: 10vh;
+  width: 10vh;
+  border-radius: 25px;
+}
+
+/* Menú desplegable */
+.menu-icon {
+  display: none; /* Ocultar el ícono del menú en pantallas grandes */
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.menu-line {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  margin: 5px;
+  transition: transform 0.3s ease;
+}
+
+.open .menu-line:nth-child(1) {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.open .menu-line:nth-child(2) {
+  opacity: 0;
+}
+
+.open .menu-line:nth-child(3) {
+  transform: rotate(45deg) translate(-5px, -6px);
+}
+/* Menú desplegable en pantallas pequeñas */
+@media screen and (max-width: 768px) {
+  .nav-menu {
+    display: flex;
+    flex-direction: column; /* Mostrar el menú como una lista hacia abajo */
+    align-items: center;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    transform: translateY(100%); /* Esconder el menú fuera de la pantalla */
+    transition: transform 0.3s ease;
+  }
+
+  .menu-icon {
+    display: block; /* Mostrar el ícono del menú en pantallas pequeñas */
+  }
+
+  .icon-text {
+    margin-left: 8px;
+    font-size: 30px;
+  }
+
+  .icon-container {
+    margin-left: 1em;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .icon {
+    height: 5vh;
+    width: 5vh;
+  }
+
+  .icon-text {
+    margin-left: 8px;
+    font-size: 30px;
+    font-style:italic;
+  }
+
+  .App-header {
+    min-height: 10vh;
+  }
+
+  .icon-container {
+    margin-left: 1em;
+  }
+
+  .nav-menu {
+    display: none;
+  }
+}
